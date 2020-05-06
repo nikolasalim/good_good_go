@@ -25,7 +25,7 @@ class LandingFormContainer extends Component {
 
     const apca = autocomplete({
       key: process.env.AIR_PORT_CODES_KEY,
-      secret: "a50f54f0c1b989c",
+      secret: process.env.AIR_PORT_CODES_SECRET,
       limit: 15,
     });
 
@@ -37,7 +37,7 @@ class LandingFormContainer extends Component {
     };
 
     apca.onError = (data) => {
-      console.log("onError", data.message);
+      console.log("on Error", data.message);
     };
 
     this.setState({ search: "", redirect: true });
