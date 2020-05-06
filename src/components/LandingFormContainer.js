@@ -25,7 +25,7 @@ class LandingFormContainer extends Component {
 
     const apca = autocomplete({
       key: process.env.AIR_PORT_CODES_KEY,
-      secret: process.env.AIR_PORT_CODES_SECRET,
+      secret: "a50f54f0c1b989c",
       limit: 15,
     });
 
