@@ -24,8 +24,9 @@ class LandingFormContainer extends Component {
     // Fetching the IATA code (ex: "AMS", "MAD", "LON") of the departure city to be able to use it with the SkyPicker API:
 
     const apca = autocomplete({
-      key: process.env.REACT_APP_AIR_PORT_CODES_KEY,
-      secret: process.env.REACT_APP_AIR_PORT_CODES_SECRET,
+      key: process.env.AIR_PORT_CODES_KEY,
+      secret: process.env.AIR_PORT_CODES_SECRET,
+      //REACT_APP_
       limit: 15,
     });
 

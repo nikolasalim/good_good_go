@@ -13,7 +13,6 @@ class DestionationContainer extends Component {
   async componentDidUpdate(prevProps) {
     const today = moment().format("DD/MM/YYYY");
     const fiveDaysAhead = moment().add(5, "days").format("DD/MM/YYYY");
-    console.log("this.props.search is", this.props.search);
 
     if (this.props.search !== prevProps.search) {
       // Fetching flights info:
@@ -35,19 +34,21 @@ class DestionationContainer extends Component {
       // Fetching weather info:
 
       const responseWeatherAms = await fetch(
-        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/249758?apikey=${process.env.REACT_APP_ACCUWEATHER_KEY}&metric=true`
+        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/249758?apikey=${process.env.ACCUWEATHER_KEY}&metric=true`
       );
       const jsonWeatherAms = await responseWeatherAms.json();
 
       const responseWeatherMad = await fetch(
-        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/308526?apikey=${process.env.REACT_APP_ACCUWEATHER_KEY}&metric=true`
+        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/308526?apikey=${process.env.ACCUWEATHER_KEY}&metric=true`
       );
       const jsonWeatherMad = await responseWeatherMad.json();
 
       const responseWeatherBud = await fetch(
-        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/187423?apikey=${process.env.REACT_APP_ACCUWEATHER_KEY}&metric=true`
+        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/187423?apikey=${process.env.ACCUWEATHER_KEY}&metric=true`
       );
       const jsonWeatherBud = await responseWeatherBud.json();
+
+      //process.env.REACT_APP_ACCUWEATHER_KEY
 
       await this.setState({
         ...this.state,
