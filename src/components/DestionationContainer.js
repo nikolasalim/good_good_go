@@ -34,17 +34,17 @@ class DestionationContainer extends Component {
       // Fetching weather info:
 
       const responseWeatherAms = await fetch(
-        `https://dataservice.accuweather.com/forecasts/v1/daily/5day/249758?apikey=G5ZXfTA808ckw1Vo8AAhAbElWO3sKaiO&metric=true`
+        `https://dataservice.accuweather.com/forecasts/v1/daily/5day/249758?apikey=${process.env.REACT_APP_ACCUWEATHER_KEY}&metric=true`
       );
       const jsonWeatherAms = await responseWeatherAms.json();
 
       const responseWeatherMad = await fetch(
-        `https://dataservice.accuweather.com/forecasts/v1/daily/5day/308526?apikey=G5ZXfTA808ckw1Vo8AAhAbElWO3sKaiO&metric=true`
+        `https://dataservice.accuweather.com/forecasts/v1/daily/5day/308526?apikey=${process.env.REACT_APP_ACCUWEATHER_KEY}&metric=true`
       );
       const jsonWeatherMad = await responseWeatherMad.json();
 
       const responseWeatherBud = await fetch(
-        `https://dataservice.accuweather.com/forecasts/v1/daily/5day/187423?apikey=G5ZXfTA808ckw1Vo8AAhAbElWO3sKaiO&metric=true`
+        `https://dataservice.accuweather.com/forecasts/v1/daily/5day/187423?apikey=${process.env.REACT_APP_ACCUWEATHER_KEY}&metric=true`
       );
       const jsonWeatherBud = await responseWeatherBud.json();
 
